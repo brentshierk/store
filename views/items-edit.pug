@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    
+    .row.justify-content-center
+        .col-sm-6
+            legend New item
+            form(action=`/items/${item._id}?_method=PUT`, method="POST")
+                .form-group
+                    label Name
+                    input.form-control(name="name" value=item.name)
+                .form-group
+                    label serial Number
+                    input.form-control(name="serialNumber" value=item.serialNumber)   
+                .form-group
+                    label Cost 
+                    input.form-control(name="species" value=item.cost)    
+                .form-group
+                    label Stock 
+                    input.form-control(name="avatar" value=item.stock)
+                .form-group
+                    label avatar 
+                    input.form-control(name="avatar" type="file" value=item.avatar)       
+                .form-group
+                    label Description
+                    textarea.form-control(name="description")= item.description
+                button(type="submit").btn.btn-primary Save
+            .text-right
+                form(action=`/items/${item._id}?_method=DELETE`, method="POST")
+                    button(type="submit").btn.btn-danger Remove

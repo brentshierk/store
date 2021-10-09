@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .row
+    each item, index in items
+      .col-sm-4.justify-content-center
+        .card
+          img.card-img-top(src=item.picUrl, alt='Card image cap')
+          .card-body
+            h4.card-title= item.name
+            small.text-muted= item.serialNumber 
+            p.card-text= item.description
+            p.card-text= item.cost
+            .text-right
+                a.card-link(href=`/items/${item._id}`) View #{item.name}
+

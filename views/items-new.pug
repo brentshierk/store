@@ -1,0 +1,28 @@
+extends layout
+
+block content
+    
+  .row.justify-content-center
+    .col-sm-6
+      legend New item
+      form(action="#" id="new-item", method="post")
+        .form-group
+            label Name*
+            input.form-control(name="name" required)
+        .form-group
+            label serial number *
+            input.form-control(name="serialNumber" required)
+        .form-group
+            label cost*
+            input.form-control(name="cost" required)
+        .form-group
+            label Stock*
+            input.form-control(name="stock" required)
+        .form-group
+            label Avatar*
+            input.form-control(name="avatar" type="file" required) 
+        .form-group
+            label Description*
+            textarea.form-control(name="description" required minlength="30")
+
+        button(type="submit").btn.btn-primary Save

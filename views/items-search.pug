@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    
+  .row.justify-content-center
+    .col-sm-6
+      legend New Item 
+      form(action=`search/?term=${term}_method=GET`, method="GET") 
+        .form-group
+            label Serial Number 
+            input.form-control(name="term" value=term) 
+        button(type="submit").btn.btn-primary Search
